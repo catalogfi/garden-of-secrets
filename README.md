@@ -78,6 +78,17 @@ We need to define who can access our **secret garden**.
 				"arn:aws:s3:::my-secrets-bucket-123456",
 				"arn:aws:s3:::my-secrets-bucket-123456/*"
 			]
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"logs:CreateLogGroup",
+				"logs:CreateLogStream",
+				"logs:PutLogEvents"
+			],
+			"Resource": [
+				"arn:aws:logs:*:*:*"
+			]
 		}
 	]
 }
@@ -125,6 +136,19 @@ We need to define who can access our **secret garden**.
     - **Execution Role**: Select the role you just attached the policy to.  
   - **Upload `garden-of-secrets.zip`**.  
 
+### Upload Code to Lambda Function 🌿
+
+- **Upload code to Lambda function**:
+  - Open your terminal and ensure AWS CLI is configured. Update the `<your_lambda_function_name>` and `<update-your-region>` placeholders:
+  ```bash
+  aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://garden-of-secrets.zip --region <update-your-region>
+  ```
+
+- **Set `app.py` as Handler**:
+  - Alternatively, you can rename `app.py` to `lambda_function.py`. Update the `<your_lambda_function_name>` and `<update-your-region>` placeholders:
+  ```bash
+  aws lambda update-function-configuration --function-name <your_lambda_function_name> --handler app.lambda_handler --region <update-your-region>
+  ```
 ---
 
 ### 6️⃣ Configure Environment Variables 🌼  

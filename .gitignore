@@ -1,0 +1,20 @@
+
+__pycache__/
+# Ignore specific packages
+bin/
+boto3-1.36.26.dist-info/
+botocore-1.36.26.dist-info/
+botocore/
+dateutil/
+jmespath-1.0.1.dist-info/
+jmespath/
+python_dateutil-2.9.0.post0.dist-info/
+response.json
+s3transfer-0.11.2.dist-info/
+s3transfer/
+six-1.17.0.dist-info/
+six.py
+urllib3-2.3.0.dist-info/
+urllib3/
+*.zip
+boto3/
