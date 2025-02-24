@@ -135,20 +135,20 @@ We need to define who can access our **secret garden**.
     - **Runtime**: `Python 3.8+`  
     - **Execution Role**: Select the role you just attached the policy to.  
   - **Upload `garden-of-secrets.zip`**.  
-
+  
 ### Upload Code to Lambda Function 🌿
 
-- **Upload code to Lambda function**:
-  - Open your terminal and ensure AWS CLI is configured. Update the `<your_lambda_function_name>` and `<update-your-region>` placeholders:
-  ```bash
-  aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://garden-of-secrets.zip --region <update-your-region>
-  ```
+  - **Upload code to Lambda function**:
+    - Open your terminal and ensure AWS CLI is configured. Update the `<your_lambda_function_name>` and `<your_region>` placeholders:
+    ```bash
+    aws lambda update-function-code --function-name <your_lambda_function_name> --zip-file fileb://garden-of-secrets.zip --region <your_region>
+    ```
 
-- **Set `app.py` as Handler**:
-  - Alternatively, you can rename `app.py` to `lambda_function.py`. Update the `<your_lambda_function_name>` and `<update-your-region>` placeholders:
-  ```bash
-  aws lambda update-function-configuration --function-name <your_lambda_function_name> --handler app.lambda_handler --region <update-your-region>
-  ```
+  - **Set `app.py` as Handler** (only first time):
+    - Alternatively, you can rename `app.py` to `lambda_function.py`. Update the `<your_lambda_function_name>` and `<your_region>` placeholders:
+    ```bash
+    aws lambda update-function-configuration --function-name <your_lambda_function_name> --handler app.lambda_handler --region <your_region>
+    ```
 ---
 
 ### 6️⃣ Configure Environment Variables 🌼  
