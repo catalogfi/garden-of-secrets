@@ -18,3 +18,4 @@ urllib3-2.3.0.dist-info/
 urllib3/
 *.zip
 boto3/
+*.temp
